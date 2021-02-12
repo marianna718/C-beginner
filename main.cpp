@@ -4,28 +4,31 @@ int main() {
   
 using namespace std;
 
-//nermucel n heto n hatanoc zangvac voric krknumnery jnjum e 
+//neracel n bn tiv     stexcel n chapani dinamik zangvac bnakan tveric ev sortavorel u artacel
+
 
 int n;
 cin >> n;
-int* arr =new int[n];
+int* arr = new int[n];
 for(int i = 0; i < n; i++) {
-  for(int j = i; j < n; j++) {
-    if((arr[i] == arr[j]) && (arr[j] != 0) && (i != j)) {
-      arr[j] = 0;
+  cin >> arr[i];
+}
+
+for(int i = 0; i < n; i++) {
+  for(int j = 0 ; j < n ; j++) {
+    if(arr[i] < arr[j]) {
+      int temp = arr[j];
+      arr[j] = arr[i];
+      arr[i] = temp;
     }
   }
 }
 
-for(int i = 0; i < n; i++){
-  if(arr[i] != 0){
-    cout << arr[i] << "\t";
-  }
-  delete[] arr;
+for(int i = 0; i < n; i++) {
+  cout << arr[i] << "\t";
+  
 }
-
-
-
+delete[] arr;
 
 
 
